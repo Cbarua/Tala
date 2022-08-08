@@ -1,0 +1,130 @@
+@import url("https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;600;700&display=swap");
+
+/* Purple violet */
+$purpleViolet-100: #6b54f6;
+
+/* Blue violet */
+$blueViolet-100: #7986cb;
+$blueViolet-200: #3f51b5;
+
+/* Gray */
+$gray-overlay: #333f46a6;
+$faint-border: rgba(255, 255, 255, 0.15);
+$gray-1: #969696;
+$gray-2: #404141;
+$gray-3: rgba(0, 0, 0, 0.1);
+
+/* Scarlet red */
+$scarletRed-100: #fa183d;
+
+/* Lime */
+$lime-100: #a3c85e;
+
+/* Bluish cyan */
+$bluishCyan-100: #7b8387;
+$bluishCyan-200: #00bfff;
+
+@mixin respond($breakpoint) {
+    @if $breakpoint==mobile {
+        @media only screen and (min-width: 576px) {
+            @content;
+        }
+    }
+    @if $breakpoint==tablet {
+        @media only screen and (min-width: 768px) {
+            @content;
+        }
+    }
+    @if $breakpoint==laptop {
+        @media only screen and (min-width: 992px) {
+            @content;
+        }
+    }
+    @if $breakpoint==desktop {
+        @media only screen and (min-width: 1200px) {
+            @content;
+        }
+    }
+    @if $breakpoint==workstation {
+        @media only screen and (min-width: 1400px) {
+            @content;
+        }
+    }
+}
+
+html {
+    // #8
+    font-size: 62.5%;
+}
+
+body {
+    font-size: 1.6rem;
+    font-family: "Rubik", sans-serif;
+}
+
+.container {
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+    // #21
+    @include respond(mobile) {
+        max-width: 540px;
+    }
+    @include respond(tablet) {
+        max-width: 720px;
+    }
+    @include respond(laptop) {
+        max-width: 960px;
+    }
+    @include respond(desktop) {
+        max-width: 1140px;
+    }
+    @include respond(workstation) {
+        max-width: 1320px;
+    }
+}
+
+.btn {
+    // #8 #14
+    width: 11.333em;
+    height: 3.6666em;
+    border-radius: 0.5rem;
+    font-size: 1.5rem;
+    position: relative;
+    &::before,
+    &::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        display: block;
+        width: 100%;
+        height: 0;
+        border-radius: inherit;
+        transition: height 0.25s;
+        background-color: $blueViolet-100;
+    }
+    &::after {
+        background-color: $blueViolet-200;
+    }
+    &:hover::before,
+    &:hover::after {
+        height: 100%;
+    }
+    &:hover::after {
+        transition-delay: 0.2s;
+    }
+    &-text {
+        position: relative;
+        z-index: 1;
+    }
+    &-blue {
+        background-color: $purpleViolet-100;
+    }
+    &-white {
+        background-color: #fff;
+        color: $gray-2;
+        &:hover {
+            color: #fff;
+        }
+    }
+}

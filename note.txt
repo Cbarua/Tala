@@ -1,0 +1,249 @@
+2022-07-30
+----------
+#1
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+The 'X-UA-Compatible' meta tag allows web authors to choose 
+what version of Internet Explorer the page should be rendered as.
+https://stackoverflow.com/questions/6771258/what-does-meta-http-equiv-x-ua-compatible-content-ie-edge-do
+
+#2
+I want cross-browser compatiblity. 
+The default styles are inconsistent across different browsers.
+There are 2 options available. Normalize.css and CSS reset.
+It's better to use both.
+https://github.com/necolas/normalize.css/
+https://nicolasgallagher.com/about-normalize-css/
+https://elad2412.github.io/the-new-css-reset/
+https://elad.medium.com/the-new-css-reset-53f41f13282e
+
+
+2022-08-03
+----------
+It's been 3 days since I studied. I studied about the <main> tag on the 30th of July.
+I've been busy with binge-watching The big bang theory. :(
+
+#3
+I thought about understanding the <main> tag more and html5 semantic tags in general.
+After reading, I am not sure if this projects needs this.
+If so, how should I use it.
+https://developer.mozilla.org/en-US/docs/Web/HTML/Element/main
+https://stackoverflow.com/questions/44308760/do-accessability-standards-require-that-every-html-page-a-main-tag
+https://developer.mozilla.org/en-US/docs/Web/HTML/Element
+
+#4
+I read Elad Shechter's Medium blog posts. 
+I found some ideas about naming and organizing things in CSS.
+The naming convention he suggests I've seen it use on Bootstrap.css
+https://elad.medium.com/naming-things-in-css-a7de9ad31cd9
+https://elad.medium.com/how-to-create-a-more-readable-css-3e67ea4812ee
+
+#5
+I've had some confusion using BEM in my Veggie project.
+I took the whole block__element--modifier thing to heart.
+I realized it after reading Elad Shechter's Medium blog.
+"feature-item > feature-item__title" wasn't necessary.
+"feature__title" looks nice. 
+I should've used "container--header" to modify container not "header__container".
+https://www.freecodecamp.org/news/css-naming-conventions-that-will-save-you-hours-of-debugging-35cea737d849/
+
+#6
+background-size: cover;
+"background-attachment: fixed;" to make sure the entire element is always covered.
+https://www.w3schools.com/html/html_images_background.asp
+
+2022-08-04
+----------
+#7
+"background" shorthand property the order of the property values are
+color, image, repeat, attachment, and position.
+https://www.w3schools.com/css/css_background_shorthand.asp
+
+#8
+EM is relative to the parent element's font size.
+REM is relative to the root (HTML) font size.
+CH is the width of "o" in the specified font family.
+Paragraphs should not exceeds 75 characters for readability. It's a good use for "ch" unit.
+EM is better to be used for paddings in buttons because easier to adjust with font size.
+Using REM helps us scale elements according user's browser settings preference.
+62.5% === 10px in html font-size because default font-size is 16px.
+It makes it easy to work with REM units ex: 21px === 2.1 rem.
+https://www.youtube.com/watch?v=tlRLEsZa89M
+https://www.youtube.com/watch?v=N5wpD9Ov_To
+
+2022-08-05
+----------
+#9
+Gray overlay to header background image.
+I've used the linear-gradient method before. 
+I'm not a fan of it because to adjust the overlay I have to change 2 places. 
+I could use a variable for the color so I only need to change the variable. 
+"background-blend-mode" isn't supported in IE, and older browsers. That's why I didn't use it.
+box-shadow: 0 0 0 50vw hsla(0, 0%, 0%, 0.64);
+https://stackoverflow.com/questions/36679649/how-to-add-a-color-overlay-to-a-background-image
+
+#10
+".header { display: block;height: 100vh; }".
+".header > .container { display: grid; height: 100%; }".
+".container" inheriting the height of 100vh and also ".navbar"'s height causing 
+the ".header" to overflow.
+Set "display: grid;" to ".header".
+I also wanted the ".container" to have the rest of the space minus ".navbar"
+so I can center the ".banner". Set "grid-template-rows: max-content;" to ".header".
+
+2022-08-06
+----------
+#11
+[].forEach.call($$("*"),function(a){a.style.outline="1px solid #"+(~~(Math.random()*(1<<24))).toString(16)})
+There are 2 things about this function. $$() and .call().
+$$() function is clear in the code above. 
+It only works in browser console window. It doesn't work in a external .js file.
+
+"[].forEach.call()" is a shorthand for "Array.prototype.forEach.call(...)".
+".call()" is a function prototype. 
+The first argument replaces "this" of the calling function. 
+In this case, it's ".forEach()". 
+The rest of the arguments will be passed to the calling function. 
+Example:
+[1, 2, 3].forEach.call(["a", "b", "c"], function (item, i, arr) {
+    console.log(i + ": " + item);
+});
+// 0: "a"
+// 1: "b"
+// 2: "c"
+https://stackoverflow.com/questions/16053357/what-does-foreach-call-do-in-javascript
+
+#12
+".header" was overflowing. 
+".btn" had huge padding. The cause is ".nav-toggle" also had ".btn" class. 
+"flex-wrap: wrap;" with "display: flex;" prevents overflowing.
+https://www.smashingmagazine.com/2021/04/css-overflow-issues/
+
+#13
+I decided to use only CSS grid in this project over flexbox 
+even though things can be done simply using flexbox.
+I changed ".wrapper" to a grid. I had to add "grid-auto-flow: column;".
+I found a cool resource to refresh my knowledge of CSS grid.
+https://learncssgrid.com/
+
+#14
+I previously added paddings to ".btn" to make it big.
+The problem is more text makes it bigger in size. I want it to stay the same.
+So, defined width & height instead of padding and used EM to define them.
+EM is good use for this because it adjust the element according to font-size.
+
+2022-08-07
+----------
+#15
+I wanted to learn jQuery again. So I took freecodecamp jQuery lessons.
+I used jQuery in this project. It makes it so simple.
+jQuery cdn -> https://code.jquery.com
+
+#16
+I used ".slideToggle()" to show and hide the ".nav-menu". jQuery makes it so simple.
+If ".slideDown()" is called on an unordered list (<ul>) and 
+its <li> elements have position (relative, absolute, or fixed), 
+the effect may not work properly in IE6 through at least IE9 unless 
+the <ul> has "layout." To remedy the problem, 
+add the "position: relative; zoom: 1;" CSS declarations to the ul.
+https://api.jquery.com/slideToggle/
+"zoom" is IE only property.
+https://css-tricks.com/almanac/properties/z/zoom/
+Translates to support CSS3 transforms on IE.
+http://www.useragentman.com/IETransformsTranslator/
+
+#17
+I seperated element class names for CSS and JS. It's considered a good practice.
+Elad's "Naming things in CSS" Medium blog post.
+
+#18
+".nav-menu" appearing behind ".banner". The ".nav-menu" must be on top of every element.
+".banner" was appearing that way because it came after ".nav-menu".
+Setting "z-index" on ".nav-menu" didn't work. 
+".navbar" "position: sticky" without explicity defined "z-index" caused it.
+".navbar" is ".nav-menu" grand-parent.
+https://coder-coder.com/z-index-isnt-working/
+
+#19
+".nav-menu" is dependent on jQuery. 
+I need it to show if Javascript is disabled in browser.
+I used the Veggie project as an inspiration. I used CSS to toggle ".nav-menu".
+
+The general sibling selector "~" selector is important in this method.
+It selects all elements that are next siblings of a specified element.
+https://www.w3schools.com/css/css_combinators.asp
+
+For it to work, I needed to put ".nav-menu" next to ".nav-toggle".
+".nav-toggle" was inside ".wrapper". 
+So I removed ".wrapper" and added its properties to ".container--navbar".
+
+I found :target selector. 
+I added "id=menu" to ".nav-menu" and changed 
+".nav-toggle" <button> to <a> to link it with ".nav-menu"
+so I can "target" ".nav-menu" to show when ".nav-toggle" is clicked.
+".nav-menu:target { transform: translateY(0); }"
+The problem is, it adds the "menu" id to the base url 
+so browser "goback" button needs to used to hide ".nav-menu".
+https://www.w3schools.com/cssref/sel_target.asp
+
+Changing ".nav-toggle" <button> to <a> element isn't a good idea.
+I need ".nav-menu" to animate and show when ".nav-toggle" is clicked.
+".nav-menu" also needs to stay in place until 
+the user clicked on one of the links on it or 
+clicked elsewhere on the page to hide ".nav-menu".
+".nav-toggle:focus ~ .nav-menu" needs to be used but it doesn't work with <a>.
+So I reverted the change.
+".nav-toggle:focus-within ~ .nav-menu" works too.
+https://developer.mozilla.org/en-US/docs/Web/CSS/:focus-within
+
+I checked how jQuery ".slideToggle()" works. It animates the height.
+Set ".nav-menu" height to "0". 
+Set ".nav-toggle:focus ~ .nav-menu" height to ".nav-menu" original height ("336.35px").
+I don't like this method because the height needs to be defined explicity.
+Setting height to "100%" isn't enough because it's the parent's height.
+The animation doesn't work when height is to "auto" or "fit-content".
+
+To animate the both open and close animations, "transition" needs to be in ".nav-menu".
+
+I tried to animate using "translateY()".
+Set ".nav-menu" transform to "translateY(-100%)". 
+Set ".nav-toggle:focus ~ .nav-menu" transform to "translateY(0)".
+It doesn't work because the element doesn't have
+an element on top of it to hide.
+Adding a div on top of it doesn't fix because 
+".header" background-image must be shown.
+I tried to position it below ".header" using z-index but no avail.
+Got the "translateY()" idea from below.
+https://stackoverflow.com/questions/44153866/how-can-i-get-the-height-of-an-element-using-css-only
+
+2022-08-08
+----------
+#20
+fit-content() CSS function clamps a given size to an available size.
+I found it here.
+https://developer.mozilla.org/en-US/docs/Web/CSS/Layout_cookbook/Media_objects
+https://developer.mozilla.org/en-US/docs/Web/CSS/fit-content_function
+
+#21
+Bootstrap containers.
+https://getbootstrap.com/docs/5.2/layout/containers/
+
+#22
+This makes the text always stay the same in different screen sizes.
+
+#23
+The original project buttons don't have their texts covered up
+by their pseudo-elements problem.
+It uses "translate3d()".
+// Only the changes
+.btn::before, .btn::after {
+  bottom: 100%;
+  left: 0;
+  z-index: -1;
+  transition: transform 0.3s;
+}
+.btn:hover::before, .btn:hover::after {
+  transform: translate3d(0, 100%, 0);
+}
+https://mytala.inaikas.com/demo/home-style-1.html#
+https://www.quackit.com/css/functions/css_translate3d_function.cfm
+

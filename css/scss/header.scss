@@ -1,0 +1,171 @@
+.container {
+    &--banner {
+        display: grid;
+        align-items: center;
+    }
+    &--navbar {
+        position: relative;
+        // #13
+        display: grid;
+        grid-auto-flow: column;
+        justify-content: space-between;
+        padding: 2rem 1.5rem;
+        @include respond(laptop) {
+            grid-template-columns: auto 1fr auto;
+            align-items: center;
+            padding: 1.5rem;
+        }
+    }
+}
+
+.header {
+    // #7
+    background: url("../assets/banner-slider-1.jpg") center;
+    background-size: cover;
+    // #9
+    box-shadow: inset 0 0 0 50vw $gray-overlay;
+    height: 100vh;
+    // #10
+    display: grid;
+    grid-template-rows: max-content;
+}
+
+.nav {
+    &bar {
+        position: sticky;
+        // #18
+        z-index: 1;
+        border-bottom: $faint-border solid 1px;
+    }
+    &-menu {
+        position: absolute;
+        right: 0;
+        top: 94.3px;
+        width: 100%;
+        background-color: #fff;
+        display: none;
+        @include respond(laptop) {
+            position: static;
+            display: grid;
+            grid-auto-flow: column;
+            justify-content: space-around;
+            background-color: transparent;
+        }
+    }
+    &-item {
+        color: $gray-1;
+        padding: 1em;
+        font-size: 1.5rem;
+        font-weight: 600;
+        border-bottom: $gray-3 solid 1px;
+        @include respond(laptop) {
+            border: 0;
+            padding: 0;
+            color: #fff;
+        }
+    }
+    &-toggle {
+        align-self: center;
+        cursor: pointer;
+        @include respond(laptop) {
+            display: none;
+        }
+    }
+}
+
+.logo-link {
+    width: 180px;
+    display: block;
+    @include respond(laptop) {
+        width: 150px;
+    }
+}
+
+%hamburger-icon {
+    display: inline-block;
+    width: 20px;
+    height: 3px;
+    background-color: #fff;
+}
+
+.hamburger-icon {
+    position: relative;
+    top: -4px;
+    @extend %hamburger-icon;
+    &::before,
+    &::after {
+        content: "";
+        position: absolute;
+        right: 0;
+        top: -7px;
+        @extend %hamburger-icon;
+    }
+    &::after {
+        top: 7px;
+    }
+}
+
+.banner {
+    text-align: center;
+    color: #fff;
+    margin-bottom: 10vw;
+    @include respond(mobile) {
+        margin-bottom: 5vw;
+    }
+    &__heading {
+        font-size: clamp(2.5rem, 10vw, 4.5rem);
+        font-weight: bold;
+        margin: 0;
+        margin-bottom: 2.5rem;
+        @include respond(mobile) {
+            font-weight: 600;
+            font-size: clamp(5.6rem, 7.5vw, 6rem);
+        }
+    }
+    &__text {
+        font-size: 2rem;
+        line-height: 1.4;
+        margin: auto;
+        margin-bottom: 3rem;
+        // #22
+        max-width: 30ch;
+        @include respond(tablet) {
+            font-size: 2.25rem;
+        }
+    }
+}
+
+.btn {
+    &-banner {
+        margin-bottom: 2rem;
+        margin-right: 2rem;
+    }
+    &-signup {
+        display: none;
+        @include respond(laptop) {
+            display: block;
+            margin-left: 1rem;
+            color: #fff;
+            text-align: center;
+            height: 2.6666em;
+        }
+    }
+}
+
+.fa-play {
+    margin-right: 1rem;
+    color: inherit;
+}
+
+.no-js {
+    // #19
+    .nav-menu {
+        display: block;
+        height: 0;
+        overflow: hidden;
+        transition: height 0.5s;
+    }
+    .nav-toggle:focus ~ .nav-menu {
+        height: 336.35px;
+    }
+}
