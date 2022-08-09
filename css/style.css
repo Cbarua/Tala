@@ -1,6 +1,7 @@
 @import "libs/normalize.css";
 @import "libs/reset.css";
 @import url("https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;900&display=swap");
 /* Purple violet */
 /* Blue violet */
 /* Gray */
@@ -87,6 +88,16 @@ body {
 }
 .btn-white:hover {
   color: #fff;
+}
+
+section {
+  padding: 8rem 0;
+  font-family: "Poppins", sans-serif;
+  color: #404044;
+}
+
+.u-text-center {
+  text-align: center !important;
 }
 
 .container--banner {
@@ -261,4 +272,84 @@ body {
 }
 .no-js .nav-toggle:focus ~ .nav-menu {
   height: 336.35px;
+}
+
+.section-intro {
+  font-weight: 600;
+}
+
+.heading-intro {
+  font-size: 1.1rem;
+  letter-spacing: 1px;
+}
+.heading-intro-services {
+  position: relative;
+  margin: 1.5rem auto;
+  display: inline-block;
+}
+.heading-intro-services::before, .heading-intro-services::after {
+  content: "";
+  border-bottom: #6b54f6 2px solid;
+  display: block;
+  width: 4rem;
+  position: absolute;
+  top: calc(50% - 1px);
+}
+.heading-intro-services::before {
+  right: -5rem;
+}
+.heading-intro-services::after {
+  left: -5rem;
+}
+
+.section-heading {
+  font-size: 3rem;
+}
+
+.cards-container {
+  display: grid;
+  grid-gap: 3rem;
+  margin: 5rem 0;
+}
+@media only screen and (min-width: 768px) {
+  .cards-container {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media only screen and (min-width: 992px) {
+  .cards-container {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+@media only screen and (min-width: 768px) {
+  .cards-container .card:nth-child(3) {
+    grid-column: 1/3;
+  }
+}
+@media only screen and (min-width: 992px) {
+  .cards-container .card:nth-child(3) {
+    grid-column: auto;
+  }
+}
+
+.card {
+  width: 100%;
+  padding: 4rem 2rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 0 3rem -2px rgba(0, 0, 0, 0.1);
+}
+.card-icon {
+  width: 6rem;
+  /* top | horizontal | bottom */
+  margin: 0 auto 1.5rem;
+}
+.card-heading {
+  font-size: 2.2rem;
+  font-weight: 600;
+  margin: 0 auto 1.5rem;
+}
+.card-text {
+  color: #969696;
+  font-size: 1.4rem;
+  line-height: 2.4rem;
 }/*# sourceMappingURL=style.css.map */

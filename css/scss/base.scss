@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;900&display=swap");
 
 /* Purple violet */
 $purpleViolet-100: #6b54f6;
@@ -13,6 +14,8 @@ $faint-border: rgba(255, 255, 255, 0.15);
 $gray-1: #969696;
 $gray-2: #404141;
 $gray-3: rgba(0, 0, 0, 0.1);
+$gray-4: #404044;
+
 
 /* Scarlet red */
 $scarletRed-100: #fa183d;
@@ -127,4 +130,14 @@ body {
             color: #fff;
         }
     }
+}
+
+section {
+    padding: 8rem 0;
+    font-family: "Poppins", sans-serif;
+    color: $gray-4;
+}
+
+.u-text-center {
+    text-align: center !important;
 }
