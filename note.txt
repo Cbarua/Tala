@@ -247,3 +247,18 @@ It uses "translate3d()".
 https://mytala.inaikas.com/demo/home-style-1.html#
 https://www.quackit.com/css/functions/css_translate3d_function.cfm
 
+2022-08-10
+----------
+#24
+I wanted to set the width of ".filled-line" with "attr(data-percentage length, 50%);"
+"attr(attribute-name <type-or-unit>, <fallback>)" isn't supported yet.
+"attr(attribute-name)" works.
+https://developer.mozilla.org/en-US/docs/Web/CSS/attr
+
+#25
+I needed an arrow-up for "showcase-visualize::before".
+I didn't use "clip-path" for this simple task. 
+https://developer.mozilla.org/en-US/docs/Web/CSS/clip-path
+I remember there's a border trick to do it but couldn't remember how.
+https://css-tricks.com/snippets/css/css-triangle/
+

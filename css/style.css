@@ -90,14 +90,31 @@ body {
   color: #fff;
 }
 
+.u-text-center {
+  text-align: center !important;
+}
+
 section {
   padding: 8rem 0;
   font-family: "Poppins", sans-serif;
   color: #404044;
 }
 
-.u-text-center {
-  text-align: center !important;
+.section-intro {
+  font-weight: 600;
+  margin-bottom: 2.5rem;
+}
+
+.section-heading {
+  font-size: 3rem;
+  text-transform: capitalize;
+}
+
+.heading-intro {
+  font-size: 1.1rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-bottom: 1.5rem;
 }
 
 .container--banner {
@@ -274,17 +291,9 @@ section {
   height: 336.35px;
 }
 
-.section-intro {
-  font-weight: 600;
-}
-
-.heading-intro {
-  font-size: 1.1rem;
-  letter-spacing: 1px;
-}
 .heading-intro-services {
   position: relative;
-  margin: 1.5rem auto;
+  margin: 0 auto 1.5rem;
   display: inline-block;
 }
 .heading-intro-services::before, .heading-intro-services::after {
@@ -302,14 +311,10 @@ section {
   left: -5rem;
 }
 
-.section-heading {
-  font-size: 3rem;
-}
-
 .cards-container {
   display: grid;
   grid-gap: 3rem;
-  margin: 5rem 0;
+  padding-top: 2.5rem;
 }
 @media only screen and (min-width: 768px) {
   .cards-container {
@@ -352,4 +357,109 @@ section {
   color: #969696;
   font-size: 1.4rem;
   line-height: 2.4rem;
+}
+
+#about {
+  padding-bottom: 0;
+  font-size: 1.4rem;
+  line-height: 2.4rem;
+}
+
+.section-heading-about {
+  line-height: 4rem;
+}
+
+.about-skills {
+  padding-bottom: 8rem;
+  background: linear-gradient(to bottom, #fefefe, #f5f5f5);
+}
+.about-skills-text {
+  color: #969696;
+}
+@media only screen and (min-width: 992px) {
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 3rem;
+  }
+}
+@media only screen and (min-width: 992px) {
+  .about-grid-item-2 {
+    background: url(../assets/banner-slider-10.jpg) center;
+    background-size: cover;
+    border-radius: 0.5rem;
+  }
+}
+.about-history {
+  background-color: #6b54f6;
+  color: #fff;
+  padding: 8rem 0;
+  text-align: center;
+}
+@media only screen and (min-width: 992px) {
+  .about-history-intro {
+    width: 60rem;
+    margin: 0 auto 2.5rem;
+  }
+}
+@media only screen and (min-width: 992px) {
+  .about-history-text {
+    width: 50rem;
+    margin: 0 auto;
+  }
+}
+
+.showcase {
+  color: #969696;
+  margin-top: 2.5rem;
+}
+.showcase-item {
+  margin-bottom: 1.5rem;
+}
+.showcase-visualize {
+  padding-top: 2rem;
+  position: relative;
+}
+.showcase-visualize .whole-line,
+.showcase-visualize .filled-line {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  display: block;
+  border-bottom: 3px solid #e3e3e3;
+}
+.showcase-visualize .filled-line {
+  border-color: #6b54f6;
+  z-index: 1;
+}
+.showcase-visualize .filled-line-1 {
+  width: 50%;
+}
+.showcase-visualize .filled-line-2 {
+  width: 80%;
+}
+.showcase-visualize .filled-line-3 {
+  width: 70%;
+}
+.showcase-visualize::after {
+  content: attr(data-percentage);
+  position: absolute;
+  bottom: -3rem;
+  right: 1rem;
+  color: #fff;
+  background-color: #000;
+  line-height: 1;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+}
+.showcase-visualize::before {
+  content: "";
+  position: absolute;
+  bottom: -0.6rem;
+  right: 2.35rem;
+  width: 0;
+  height: 0;
+  border-left: 0.5rem solid transparent;
+  border-right: 0.5rem solid transparent;
+  border-bottom: 0.5rem solid black;
 }/*# sourceMappingURL=style.css.map */

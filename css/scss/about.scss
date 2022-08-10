@@ -1,0 +1,110 @@
+#about {
+    padding-bottom: 0;
+    font-size: 1.4rem;
+    line-height: 2.4rem;
+}
+
+.section-heading-about {
+    line-height: 4rem;
+}
+
+.about {
+    &-skills {
+        padding-bottom: 8rem;
+        background: linear-gradient(to bottom, #fefefe, #f5f5f5);
+        &-text {
+            color: $gray-1;
+        }
+    }
+    &-grid {
+        @include respond(laptop) {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-gap: 3rem;
+        }
+        &-item-2 {
+            @include respond(laptop) {
+                background: url(../assets/banner-slider-10.jpg) center;
+                background-size: cover;
+                border-radius: 0.5rem;
+            }
+        }
+    }
+    &-history {
+        background-color: $primary-color;
+        color: #fff;
+        padding: 8rem 0;
+        text-align: center;
+        &-intro {
+            @include respond(laptop) {
+                width: 60rem;
+                margin: 0 auto 2.5rem;
+            }
+        }
+        &-text {
+            @include respond(laptop) {
+                width: 50rem;
+                margin: 0 auto;
+            }
+        }
+    }
+}
+
+.showcase {
+    color: $gray-1;
+    margin-top: 2.5rem;
+    &-item {
+        margin-bottom: 1.5rem;
+    }
+    &-visualize {
+        padding-top: 2rem;
+        position: relative;
+        .whole-line,
+        .filled-line {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            display: block;
+            border-bottom: 3px solid #e3e3e3;
+        }
+        .filled-line {
+            border-color: $primary-color;
+            z-index: 1;
+            &-1 {
+                width: 50%;
+            }
+            &-2 {
+                width: 80%;
+            }
+            &-3 {
+                width: 70%;
+            }
+        }
+        &::after {
+            // #24
+            content: attr(data-percentage);
+            position: absolute;
+            // because this element height is 2rem and
+            // I want to move 1rem below
+            bottom: -3rem;
+            right: 1rem;
+            color: #fff;
+            background-color: #000;
+            line-height: 1;
+            padding: 0.5rem;
+            border-radius: 0.5rem;
+        }
+        &::before {
+            content: "";
+            position: absolute;
+            bottom: -0.6rem;
+            right: 2.35rem;
+            // #25
+            width: 0;
+            height: 0;
+            border-left: 0.5rem solid transparent;
+            border-right: 0.5rem solid transparent;
+            border-bottom: 0.5rem solid black;
+        }
+    }
+}

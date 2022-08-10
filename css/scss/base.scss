@@ -2,7 +2,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;900&display=swap");
 
 /* Purple violet */
-$purpleViolet-100: #6b54f6;
+$primary-color: #6b54f6;
 
 /* Blue violet */
 $blueViolet-100: #7986cb;
@@ -121,7 +121,7 @@ body {
         z-index: 1;
     }
     &-blue {
-        background-color: $purpleViolet-100;
+        background-color: $primary-color;
     }
     &-white {
         background-color: #fff;
@@ -132,12 +132,29 @@ body {
     }
 }
 
+.u-text-center {
+    text-align: center !important;
+}
+
 section {
     padding: 8rem 0;
     font-family: "Poppins", sans-serif;
     color: $gray-4;
 }
 
-.u-text-center {
-    text-align: center !important;
+.section-intro {
+    font-weight: 600;
+    margin-bottom: 2.5rem;
+}
+
+.section-heading {
+    font-size: 3rem;
+    text-transform: capitalize;
+}
+
+.heading-intro {
+    font-size: 1.1rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-bottom: 1.5rem;
 }

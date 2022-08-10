@@ -1,18 +1,12 @@
-.section-intro {
-    font-weight: 600;
-}
-
 .heading-intro {
-    font-size: 1.1rem;
-    letter-spacing: 1px;
     &-services {
         position: relative;
-        margin: 1.5rem auto;
+        margin: 0 auto 1.5rem;
         display: inline-block;
         &::before,
         &::after {
             content: "";
-            border-bottom: $purpleViolet-100 2px solid;
+            border-bottom: $primary-color 2px solid;
             display: block;
             width: 4rem;
             position: absolute;
@@ -27,14 +21,10 @@
     }
 }
 
-.section-heading {
-    font-size: 3rem;
-}
-
 .cards-container {
     display: grid;
     grid-gap: 3rem;
-    margin: 5rem 0;
+    padding-top: 2.5rem;
     @include respond(tablet) {
         grid-template-columns: 1fr 1fr;
     }
