@@ -1,0 +1,136 @@
+@import url("https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;900&display=swap");
+/* Purple violet */
+/* Blue violet */
+/* Gray */
+/* Scarlet red */
+/* Lime */
+/* Bluish cyan */
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-size: 1.6rem;
+  font-family: "Rubik", sans-serif;
+  position: relative;
+}
+
+.container {
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+@media only screen and (min-width: 576px) {
+  .container {
+    max-width: 540px;
+  }
+}
+@media only screen and (min-width: 768px) {
+  .container {
+    max-width: 720px;
+  }
+}
+@media only screen and (min-width: 992px) {
+  .container {
+    max-width: 960px;
+  }
+}
+@media only screen and (min-width: 1200px) {
+  .container {
+    max-width: 1140px;
+  }
+}
+@media only screen and (min-width: 1400px) {
+  .container {
+    max-width: 1320px;
+  }
+}
+
+.btn {
+  width: 11.333em;
+  height: 3.6666em;
+  border-radius: 0.5rem;
+  font-size: 1.5rem;
+  position: relative;
+}
+.btn::before, .btn::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  display: block;
+  width: 100%;
+  height: 0;
+  border-radius: inherit;
+  transition: height 0.25s;
+  background-color: #7986cb;
+}
+.btn::after {
+  background-color: #3f51b5;
+}
+.btn:hover::before, .btn:hover::after {
+  height: 100%;
+}
+.btn:hover::after {
+  transition-delay: 0.2s;
+}
+.btn-text {
+  position: relative;
+  z-index: 1;
+}
+.btn-blue {
+  background-color: #6b54f6;
+}
+.btn-white {
+  background-color: #fff;
+  color: #404141;
+}
+.btn-white:hover {
+  color: #fff;
+}
+
+.u-text-center {
+  text-align: center !important;
+}
+
+section {
+  padding: 8rem 0;
+  font-family: "Poppins", sans-serif;
+  color: #404044;
+}
+
+.section-intro {
+  font-weight: 600;
+  margin-bottom: 2.5rem;
+  text-align: center;
+}
+
+.section-heading {
+  font-size: 3rem;
+  text-transform: capitalize;
+}
+
+.heading-intro {
+  font-size: 1.1rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  position: relative;
+  margin: 0 auto 1.5rem;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+.heading-intro::before, .heading-intro::after {
+  content: "";
+  border-bottom: #6b54f6 1px solid;
+  display: block;
+  width: 4rem;
+  position: absolute;
+  top: calc(50% - 1px);
+}
+.heading-intro::before {
+  right: -5rem;
+}
+.heading-intro::after {
+  left: -5rem;
+}/*# sourceMappingURL=base.css.map */

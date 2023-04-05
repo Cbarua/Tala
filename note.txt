@@ -1,3 +1,6 @@
+Project source
+https://mytala.inaikas.com/demo/home-style-1.html#
+
 2022-07-30
 ----------
 #1
@@ -262,3 +265,24 @@ https://developer.mozilla.org/en-US/docs/Web/CSS/clip-path
 I remember there's a border trick to do it but couldn't remember how.
 https://css-tricks.com/snippets/css/css-triangle/
 
+2022-09-03
+----------
+#26
+I changed ".header" height property to min-height.
+It stops overflowing in lower height screen sizes like mobile devices.
+
+#27
+".navbar" {postion: sticky} didn't work until top is defined.
+
+#28
+".navbar" doesn't work beyond ".header".
+Element with {position: sticky} property leaves the viewport
+when its parent element scrolls off the viewport.
+So, {position: fixed} needs to be used.
+https://www.geeksforgeeks.org/what-is-the-difference-between-positionsticky-and-positionfixed-in-css/
+
+
+
+#
+css check for hover. Kevin's video
+css overview on edge. color palette extractor

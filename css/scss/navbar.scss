@@ -1,0 +1,76 @@
+.nav {
+    &bar {
+        position: sticky;
+        // #27
+        top: 0;
+        // #18
+        z-index: 1;
+        border-bottom: $faint-border solid 1px;
+    }
+    &-toggle {
+        align-self: center;
+        cursor: pointer;
+        @include respond(laptop) {
+            display: none;
+        }
+    }
+    &-menu {
+        position: absolute;
+        right: 0;
+        top: 94.3px;
+        width: 100%;
+        background-color: #fff;
+        display: none;
+        @include respond(laptop) {
+            position: static;
+            display: grid;
+            grid-auto-flow: column;
+            justify-content: space-around;
+            background-color: transparent;
+        }
+    }
+    &-item {
+        color: $gray-1;
+        padding: 1em;
+        font-size: 1.5rem;
+        font-weight: 600;
+        border-bottom: $gray-3 solid 1px;
+        @include respond(laptop) {
+            border: 0;
+            padding: 0;
+            color: #fff;
+        }
+    }
+}
+
+.logo-link {
+    width: 180px;
+    display: block;
+    @include respond(laptop) {
+        width: 150px;
+    }
+}
+
+%hamburger-icon {
+    display: inline-block;
+    width: 20px;
+    height: 3px;
+    background-color: #fff;
+}
+
+.hamburger-icon {
+    position: relative;
+    top: -4px;
+    @extend %hamburger-icon;
+    &::before,
+    &::after {
+        content: "";
+        position: absolute;
+        right: 0;
+        top: -7px;
+        @extend %hamburger-icon;
+    }
+    &::after {
+        top: 7px;
+    }
+}

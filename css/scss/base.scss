@@ -16,7 +16,6 @@ $gray-2: #404141;
 $gray-3: rgba(0, 0, 0, 0.1);
 $gray-4: #404044;
 
-
 /* Scarlet red */
 $scarletRed-100: #fa183d;
 
@@ -26,6 +25,8 @@ $lime-100: #a3c85e;
 /* Bluish cyan */
 $bluishCyan-100: #7b8387;
 $bluishCyan-200: #00bfff;
+
+$whitespace: 8rem;
 
 @mixin respond($breakpoint) {
     @if $breakpoint==mobile {
@@ -63,6 +64,7 @@ html {
 body {
     font-size: 1.6rem;
     font-family: "Rubik", sans-serif;
+    position: relative;
 }
 
 .container {
@@ -145,6 +147,7 @@ section {
 .section-intro {
     font-weight: 600;
     margin-bottom: 2.5rem;
+    text-align: center;
 }
 
 .section-heading {
@@ -156,5 +159,22 @@ section {
     font-size: 1.1rem;
     letter-spacing: 1px;
     text-transform: uppercase;
-    margin-bottom: 1.5rem;
+    position: relative;
+    margin: 0 auto 1.5rem;
+    width: fit-content;
+    &::before,
+    &::after {
+        content: "";
+        border-bottom: $primary-color 1px solid;
+        display: block;
+        width: 4rem;
+        position: absolute;
+        top: calc(50% - 1px);
+    }
+    &::before {
+        right: -5rem;
+    }
+    &::after {
+        left: -5rem;
+    }
 }
